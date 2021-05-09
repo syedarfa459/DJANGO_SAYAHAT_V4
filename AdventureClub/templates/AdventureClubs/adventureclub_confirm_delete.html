@@ -1,0 +1,11 @@
+{% extends 'AdventureClubs/base.html' %}
+{% block body_block %}
+<div class="container d-flex justify-content-center" style="margin-top:100px;">
+    <form method="post" class=" jumbotron">
+        {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input class="btn btn-outline-danger" type="submit" value="Confirm">
+    </form>
+</div>
+
+{% endblock %}

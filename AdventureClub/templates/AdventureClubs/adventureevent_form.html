@@ -1,0 +1,43 @@
+{% extends 'AdventureClubs/base.html' %} {% load crispy_forms_tags %} 
+{% block body_block %}
+<div id="msg">
+  {% if messages %}
+  <div id="top-alert" class="alert alert-info" role="alert">
+    <div class="text-center">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>{{request.user}}</strong>
+      {% for message in messages %}
+      <!-- <div class="alert {{ message.tags }} m-2" id="msg" role="alert"> -->
+      {{ message }}
+      <!-- </div> -->
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+<div
+  class="container-fluid d-flex justify-content-center"
+  style="padding-top: 170px"
+>
+  <form
+    name="image"
+    method="POST"
+    enctype="multipart/form-data"
+    class="jumbotron bg-white shadow"
+  >
+    <h2 class="text-dark">Create your Adventure Events here</h2>
+    {%csrf_token%}
+    <h5 class="text-dark text-center mt-4">Choose Club</h5>
+
+    {%for c in clubs%}
+    <input type="radio" name="club" value="{{c}}" />
+    <label for="{{c}}">{{c}}</label><br />
+    {%endfor%} {{form|crispy}}
+    <div class="text-center mt-5">
+      <input class="btn btn-success" type="submit" value="Create Event" />
+    </div>
+  </form>
+  <br />
+</div>
+<div class="mt-4"></div>
+{% endblock %}

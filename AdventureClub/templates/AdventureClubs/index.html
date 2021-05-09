@@ -1,0 +1,471 @@
+{% extends 'AdventureClubs/base_for_index.html' %}
+{%load static%}
+{% block body_block %}
+<head>
+	<style type="text/css" rel="stylesheet">
+
+.inner{
+    overflow:hidden;
+
+
+}
+.inner img{
+    transition: all 0.5s ease;
+
+}
+.inner:hover img{
+    transform: scale(1.07);
+}
+
+h1{
+
+    margin: 100px auto;
+
+    font-size: 20px;
+    max-width: 600px;
+    position:relative;
+    }
+    h1:before{
+    content: "";
+    display:block;
+    width: 170px;
+    height:1px;
+    background: rgb(63, 61, 61);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+    }
+    h1:after{
+    content: "";
+    display:block;
+    width: 170px;
+    height:1px;
+    background: rgb(63, 61, 61)0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -2;
+    }
+
+/*  for text having lines on both sides */
+h1{
+
+    margin: 100px auto;
+
+    font-size: 20px;
+    max-width: 600px;
+    position:relative;
+    }
+    h1:before{
+    content: "";
+    display:block;
+    width: 170px;
+    height:1px;
+    background: rgb(63, 61, 61);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+    }
+    h1:after{
+    content: "";
+    display:block;
+    width: 170px;
+    height:1px;
+    background: rgb(63, 61, 61)0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -2;
+    }
+
+
+
+
+
+  /* for animations at text and images */
+
+.single-content{
+    position:relative;
+    transition:.3s;
+
+
+}
+.single-content .text-content,
+.single-content:after{
+    position:absolute;
+    left:40px;
+    right:40px;
+
+
+}
+
+.single-content:after{
+    content:'';
+    display:block;
+    background:rgba(0, 0, 0, 0.8);
+    top:40px;
+    bottom:40px;
+    opacity:0;
+    transform:rotate3d(-1,1,0,100deg);
+    transition: .4s;
+
+}
+.single-content:hover:after{
+    opacity:.9;
+    transform: rotate3d(0,0,0,0deg);
+
+
+}
+.single-content img{
+    width:100%;
+    height: auto;
+}
+
+.text-content{
+    top:50%;
+    opacity:0;
+    z-index:1;
+    transform:translate(10%,-30%);
+    transition: .3s;
+    text-align:center;
+    color:#fff;
+
+
+}
+.text-content h4{
+    font-family: Georgia;
+    font-weight: 700;
+
+
+}
+.single-content:hover .text-content{
+    opacity:1;
+    transform:translate(0,-50%);
+    transition-delay: .3s;
+
+}
+.shape{
+    width:100%;
+    height: 400px;
+    background:linear-gradient(to bottom, #D63773, #ED528D 70%);
+    position: absolute;
+    clip-path: ellipse(150px 150px at 10% 5%);
+    -webkit-clip-path: ellipse(150px 150px at 10% 5%);
+}
+
+
+
+	</style>
+	<script  type="text/javascript">
+
+  AOS.init({
+  duration: 1200,
+})
+
+</script>
+</head>
+
+
+	<div class="home">
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(92, 77, 66, 0.8) 100%), url({%static 'images/bg1.png'%});size:cover;"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2 id="myc" >Join Our Adventure Clubs</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url({%static 'images/bg.png'%})"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2>Join Our Adventure Clubs</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				<div class="owl-item">
+					<div class="background_image" style="background-image:url({%static 'images/about.jpg'%})"></div>
+					<div class="home_slider_content_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_slider_content">
+										<div class="home_title"><h2>Join Our Adventure Clubs</h2></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="home_page_nav">
+				<!-- <ul class="d-flex flex-column align-items-end justify-content-end">
+					<li><a href="#" data-scroll-to="#destinations">Offers<span>01</span></a></li>
+					<li><a href="#" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
+					<li><a href="#" data-scroll-to="#news">Latest<span>03</span></a></li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- Search -->
+
+	<div class="home_search ">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_search_container ">
+						<div class="home_search_title">Search for your trip</div>
+						<div class="home_search_content ">
+							<form action="{%url 'club:searchResults'%}" class="home_search_form" id="home_search_form">
+								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-around">
+									<input type="text" class="search_input search_input_1" placeholder="Search any Adevnture event with City" name="city" required="required">
+									<button class="home_search_button">search</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Intro -->
+
+	<div class="intro">
+		<!-- <div class="intro_background" style="background-image:url(images/intro.png)"></div> -->
+		<div class="intro_background"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="intro_container">
+						<div class="row">
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col" data-aos="flip-left">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/ico5.png' %}" alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Top Destinations</div>
+										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col" data-aos="flip-left">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/ico4.png' %}"  alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">The Best Clubs</div>
+										<div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Intro Item -->
+							<div class="col-lg-4 intro_col" data-aos="flip-left">
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="{% static 'images/ico3.png' %}"  alt=""></div>
+									<div class="intro_content">
+										<div class="intro_title">Amazing Services</div>
+										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Featured Clubs -->
+    <section class="latest-posts">
+		<div class="row">
+				<div class="col text-center">
+					<div class="section_title">
+						<h1 class="d-flex justify-content-center text-uppercase" style="margin-bottom: 50px">Featured Clubs</h1>
+					</div>
+				</div>
+			</div>
+      <div class="container" >
+        <div class="row d-flex justify-content-center" style="padding:20px 20px 20px 20px;">
+      {%for fc in FC%}
+			<div data-aos="flip-down" class="col-sm-4 py-3 py-sm-0" >
+              <div class="card shadow" >
+                  <div class="inner">
+                      <a href="{%url 'club:detail' pk=fc.id %}"><img  style="height:300px;width:400px" src="{{fc.club_image.url}}"   class="card-img-top" href="#" alt="..."></a>
+                  </div>
+
+                  <div class="card-body text-center" style="">
+                    <h5 class="card-title">{{fc.club_name}}</h5>
+
+					  <a class="btn btn-outline-dark" href="{%url 'club:detail' pk=fc.id %}">Check Details...</a>
+
+                  </div>
+              </div>
+          </div>
+      {%endfor%}
+        </div>
+      </div>
+	  <div class="mt-5"></div>
+    </section>
+
+	<!-- Testimonials -->
+
+	<div class="testimonials" id="testimonials">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/bg3.png' %}"  data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">Sayahat Adventure CLubs</div>
+					<div class="section_title"><h2>Testimonials</h2></div>
+				</div>
+			</div>
+			<div class="row testimonials_row">
+				<div class="col">
+
+					<!-- Testimonials Slider -->
+					<div class="testimonials_slider_container">
+						<div class="owl-carousel owl-theme testimonials_slider">
+
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">Such a Good initiative to connet people with their local clubs, this will help in promoting local tourism in Pakistan.</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Abbas Ahmed,</div>
+										<div>Club owner</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">I have registered my clubs with sayahat, since then i get constant tourists calls, Very Satisfied.</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Syed Arfa,</div>
+										<div>Club owner</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Slide -->
+							<div class="owl-item text-center">
+								<div class="testimonial">Very sharp and brilliant choices of locations, good travel experience with registered clubs, Appreciated !!!</div>
+								<div class="testimonial_author">
+									<div class="testimonial_author_content d-flex flex-row align-items-end justify-content-start">
+										<div>Ayesha Hameed,</div>
+										<div>Tourist</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="test_nav">
+			<ul class="d-flex flex-column align-items-end justify-content-end">
+				<li><a href="#">City Breaks Clients<span>01</span></a></li>
+				<li><a href="#">Cruises Clients<span>02</span></a></li>
+				<li><a href="#">All Inclusive Clients<span>03</span></a></li>
+			</ul>
+		</div> -->
+	</div>
+
+<!--featured events-->
+<h1 class="d-flex justify-content-center text-uppercase" style="margin-bottom: 50px">Upcomming Events</h1>
+	<div class="news" id="news">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8">
+					<div class="news_container">
+
+						<!-- News Post -->
+			{%for fe in FE%}
+						<!-- News Post -->
+						<div data-aos="fade-right" class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="news_post_image"><img src="{{fe.image.url}}" alt=""></div>
+							<div class="news_post_content">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+									<div>{{fe.event_start_date}}</div>
+								</div>
+								<div class="news_post_title"><a href="#">{{fe.title}}</a href="#"></div>
+								<div class="news_post_category">
+									<ul>
+										<li ><a class="text-danger" href="#">{{fe.event_end_date}}</a></li>
+									</ul>
+								</div>
+								<div class="news_post_text">
+									<p>{{fe.overview}}</p>
+								</div>
+								<div>
+									<a href="https://api.whatsapp.com/send?phone={{fe.event_by.contact}}"><button class="btn btn-outline-success">Book on Whatsapp</button></a>
+								</div>
+							</div>
+						</div>
+			{%endfor%}
+
+					</div>
+				</div>
+
+				<!-- News Sidebar -->
+				<div class="col-xl-4" style="background-image:url({%static 'images/bg1.png'%});background-size:cover">
+					<div class="travello">
+						<div class="background_image" ></div>
+						<div class="travello_content">
+							<div class="travello_content_inner">
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="travello_container">
+							<a >
+								<div class="d-flex flex-column align-items-center justify-content-end">
+									<span class="travello_title">Sayahat</span>
+									<span class="travello_subtitle">Your Dream locations at your click</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}
